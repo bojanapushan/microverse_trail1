@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Microverse Challenge</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+
+  <body>
+    <nav id="nav-bar">
+      <header>
+        <h1>Javascript Documentation</h1>
+      </header>
+      <a href="#Array" class="nav-link">Array</a>
+      <a href="#Number" class="nav-link">Number</a>
+      <a href="#Object" class="nav-link">Object</a>
+      <a href="#async_function" class="nav-link">async function</a>
+      <a href="#function" class="nav-link">function</a>
+    </nav>
+    <main id="main-doc">
+      <section id="Array" class="main-section">
+        <header>Array</header>
+        <p>The JavaScript Array class is a global object that is used in the construction of arrays; which are high-level, list-like objects.</p>
+        <p>Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's length can change at any time, and data can be stored at non-contiguous locations in the array, JavaScript arrays are not guaranteed to be dense; this depends on how the programmer chooses to use them. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.</p>
+        <p><b>Create an Array</b></p>
+        <code>let fruits = ['Apple', 'Banana']</code>
+        <br>
+      </section>
+      <section id="Number" class="main-section">
+        <header>Number</header>
+        <p>Number is a primitive wrapper object used to represent and manipulate numbers like 37 or -9.25.</p>
+        <p>
+          The <code>Number</code> constructor contains constants and methods for working with numbers. Values of other types can be converted to numbers using the <code>Number()</code>.</p>
+        <p>Number may also be expressed in literal forms like 0b101, 0o13, 0x0A.</p>
+        
+      </section>
+      <section id="Object" class="main-section">
+        <header>Object</header>
+        <p>The Object class represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities. Objects can be created using the <code>Object()</code> constructor or the object initializer / literal syntax.</p>
+        <p>Nearly all objects in JavaScript are instances of Object; a typical object inherits properties (including methods) from Object.prototype, although these properties may be shadowed (a.k.a. overridden). However, an Object may be deliberately created for which this is not true (e.g. by <code>Object.create(null)</code>), or it may be altered so that this is no longer true (e.g. with Object.setPrototypeOf).</p>
+        <p>Changes to the Object prototype object are seen by all objects through prototype chaining, unless the properties and methods subject to those changes are overridden further along the prototype chain. This provides a very powerful although potentially dangerous mechanism to override or extend object behavior.</p>
+        <p>The Object constructor creates an object wrapper for the given value.</p>
+        <ul>
+          <li>If the value is <code>null</code> or <code>undefined</code>, it will create and return an empty object.</li>
+          <li>Otherwise, it will return an object of a Type that corresponds to the given value.</li>
+          <li>If the value is an object already, it will return the value.</li>
+        </ul>
+        <p>The <code>Object.assign()</code> method copies all enumerable own properties from one or more source objects to a target object. It returns the target object.</p>
+        <code>
+          const target = { a: 1, b: 2 }; <br>
+          const source = { b: 4, c: 5 };<br>
+          
+          const returnedTarget = Object.assign(target, source); <br>
+          console.log(target);<br>
+          // expected output: Object { a: 1, b: 4, c: 5 }<br>
+          console.log(returnedTarget);<br>
+    // expected output: Object { a: 1, b: 4, c: 5 }
+        </code>
+      </section>
+      <section id="async_function" class="main-section">
+        <header>async function</header>
+        <p>The async function keyword can be used to define async functions inside expressions.</p>
+        <p>You can also define async functions using an async function statement.</p>
+        <code>
+          async function [name]([param1[, param2[, ..., paramN]]]) {
+       statements
+          }</code>
+        <p>
+          <code>name</code>
+        The function name. Can be omitted, in which case the function is anonymous. The name is only local to the function body.
+          <code>paramN</code>
+        The name of an argument to be passed to the function.
+          <code>statements</code>
+          The statements which comprise the body of the function. </p>
+      </section>
+      <section id="function" class="main-section">
+        <header>function</header>
+        <p>The function keyword can be used to define a function inside an expression.</p>
+        <p>You can also define functions using the Function constructor and a function declaration.</p>
+        <code>const getRectArea = function(width, height) { <br>
+      return width * height;<br>
+    };<br>
+    
+    console.log(getRectArea(3, 4));<br>
+          // expected output: 12</code>
+        <ul><li>Function expressions in JavaScript are not hoisted, unlike function declarations. You can't use function expressions before you create them:</li>
+        <code>console.log(notHoisted) // undefined <br>
+    //  even though the variable name is hoisted, the definition isn't. so it's undefined.
+    notHoisted(); // TypeError: notHoisted is not a function<br>
+    
+    var notHoisted = function() {<br>
+       console.log('bar');<br>
+    };</code>
+        <li>The variable the function expression is assigned to will have a name property. The name doesn't change if it's assigned to a different variable. If function name is omitted, it will be the variable name (implicit name). If function name is present, it will be the function name (explicit name). This also applies to arrow functions (arrows don't have a name so you can only give the variable an implicit name).</li>
+        <code>
+          var foo = function() {}<br>
+    foo.name // "foo"<br>
+    
+    var foo2 = foo<br>
+    foo2.name // "foo"<br>
+    
+    var bar = function baz() {}<br>
+    bar.name // "baz"<br>
+    
+    console.log(foo === foo2); // true<br>
+    console.log(typeof baz); // undefined<br>
+    console.log(bar === baz); // false (errors because baz == undefined)
+        </code>
+      </section>
+    </main>
+    <footer><p>Every Information on this page was excerpted from <a href="http://devdocs.io" target="_blank">devdocs.io</a>
+  </body>
+</html>
